@@ -1,0 +1,77 @@
+﻿<Page x:Class="Garment_Factory.Views.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Garment_Factory.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="400"
+      Title="Registration">
+    <StackPanel HorizontalAlignment="Center"
+                Margin="0,10,0,20">
+        <TextBlock Text="Имя:"
+                   FontSize="18"/>
+        <TextBox x:Name="tbName"
+                 Width="300"
+                 Style="{DynamicResource TextBoxStyle}"/>
+        <Separator Height="10" Opacity="0"/>
+        <TextBlock Text="Логин:"
+                   FontSize="18"/>
+        <TextBox x:Name="tbLogin"
+                 Width="300"
+                 Style="{DynamicResource TextBoxStyle}"/>
+        <Separator Height="10" Opacity="0"/>
+        <TextBlock Text="Пароль:"
+                   FontSize="18"/>
+        <Grid Width="300">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="tbPassword1"
+                     Grid.Column="0"
+                     Width="300"
+                     Visibility="Hidden"
+                     Style="{DynamicResource TextBoxStyle}"
+                     TextChanged="tbPassword1_TextChanged"/>
+            <PasswordBox x:Name="pbPassword1"
+                         Grid.Column="0"
+                         Style="{DynamicResource PasswordBoxStyle}"/>
+            <CheckBox x:Name="cbChangeMode"
+                      Grid.Column="1"
+                      VerticalAlignment="Center"
+                      Click="cbChangeMode_Click"
+                      HorizontalAlignment="Center"/>
+        </Grid>
+        <Separator Height="10" Opacity="0"/>
+        <TextBlock Text="Повторите пароль:"
+                   FontSize="18"/>
+        <Grid Width="300">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="tbPassword2"
+                     Grid.Column="0"
+                     Width="300"
+                     Visibility="Hidden"
+                     Style="{DynamicResource TextBoxStyle}"
+                     TextChanged="tbPassword2_TextChanged"/>
+            <PasswordBox x:Name="pbPassword2"
+                         Grid.Column="0"
+                         Style="{DynamicResource PasswordBoxStyle}"/>
+        </Grid>
+        <Separator Height="10" Opacity="0"/>
+        <Button x:Name="btnToRegistr"
+                Width="300"
+                Click="btnToRegistr_Click"
+                Content="Зарегистрироваться"
+                Style="{DynamicResource ButtonStyle}"/>
+        <Separator Height="10" Opacity="0"/>
+        <Button x:Name="btnToBack"
+                Width="300"
+                Click="btnToBack_Click"
+                Content="Отмена"
+                Style="{DynamicResource ButtonStyle}"/>
+    </StackPanel>
+</Page>
